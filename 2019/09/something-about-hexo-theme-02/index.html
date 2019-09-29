@@ -8,18 +8,22 @@
   
     <meta name="keywords" content="BigYue | BigYue's Blog">
   
-  <meta name="description" content="不作死就不会死">
+  <meta name="description" content="好的，下午好呀。建议想看这个系列博客的读者可以按顺序阅读，才不会摸不着头脑。（事实上，我不想别人来看，这只是我的一个记录博客，自己以后回看用的） 上一篇博客中的每个标题点，我用的都是h2，发现有点大，这篇试试h3。 好的，继续上一篇的内容 hexo partial head上一篇的博客贴出了layout.ejs的代码，第一句就是&amp;lt;%- partial(&amp;#39;_partial/head&amp;#">
 <meta name="keywords" content="hexo_theme">
 <meta property="og:type" content="article">
 <meta property="og:title" content="something_about_hexo_theme_02">
 <meta property="og:url" content="http://yoursite.com/2019/09/something-about-hexo-theme-02/index.html">
 <meta property="og:site_name" content="BigYue的博客">
-<meta property="og:description" content="不作死就不会死">
+<meta property="og:description" content="好的，下午好呀。建议想看这个系列博客的读者可以按顺序阅读，才不会摸不着头脑。（事实上，我不想别人来看，这只是我的一个记录博客，自己以后回看用的） 上一篇博客中的每个标题点，我用的都是h2，发现有点大，这篇试试h3。 好的，继续上一篇的内容 hexo partial head上一篇的博客贴出了layout.ejs的代码，第一句就是&amp;lt;%- partial(&amp;#39;_partial/head&amp;#">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-28T15:10:23.468Z">
+<meta property="og:image" content="http://yoursite.com/pictures/code_title.png">
+<meta property="og:image" content="http://yoursite.com/pictures/code_body.png">
+<meta property="og:image" content="http://yoursite.com/pictures/theme_first.png">
+<meta property="og:updated_time" content="2019-09-29T11:53:55.950Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="something_about_hexo_theme_02">
-<meta name="twitter:description" content="不作死就不会死">
+<meta name="twitter:description" content="好的，下午好呀。建议想看这个系列博客的读者可以按顺序阅读，才不会摸不着头脑。（事实上，我不想别人来看，这只是我的一个记录博客，自己以后回看用的） 上一篇博客中的每个标题点，我用的都是h2，发现有点大，这篇试试h3。 好的，继续上一篇的内容 hexo partial head上一篇的博客贴出了layout.ejs的代码，第一句就是&amp;lt;%- partial(&amp;#39;_partial/head&amp;#">
+<meta name="twitter:image" content="http://yoursite.com/pictures/code_title.png">
   
   
     <link rel="icon" href="/myFavicon.ico">
@@ -133,10 +137,45 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            
+            <p>好的，下午好呀。建议想看这个系列博客的读者可以按顺序阅读，才不会摸不着头脑。（事实上，我不想别人来看，这只是我的一个记录博客，自己以后回看用的）</p>
+<p>上一篇博客中的每个标题点，我用的都是h2，发现有点大，这篇试试h3。</p>
+<p>好的，继续上一篇的内容</p>
+<h3 id="hexo-partial-head"><a href="#hexo-partial-head" class="headerlink" title="hexo partial head"></a>hexo partial head</h3><p>上一篇的博客贴出了layout.ejs的代码，第一句就是<code>&lt;%- partial(&#39;_partial/head&#39;) %&gt;</code>，<code>&lt;%-</code>表示输出非转义的数据到模板，很好理解，就是原封不动复制黏贴过来。那我们来看看这个partial函数。</p>
+<p>hexo的文档给出如下说明。partial用来载入其他模板文件，可在<code>locals</code>设定区域变量。</p>
+<p><code>&lt;%- partial(layout, [locals], [options]) %&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cache</td>
+<td>缓存（使用Fragment cache）</td>
+<td>false</td>
+</tr>
+<tr>
+<td>only</td>
+<td>限制局部变量。即模板中只能使用locals指定的变量</td>
+<td>false</td>
+</tr>
+</tbody></table>
+<p>嗯。。。 摸不着头脑呀，看完这个说明。嘛，对照一下，layout.ejs文件里第一句的意思应该就是加载_partial文件夹下的head这个layout文件了，果然打开_partial文件夹就看到了head.ejs文档。</p>
+<p>ok，为了验证一下是不是这样子，我们修改一下head.ejs里面比较明显的东西。我们在title标签在加上一些标记，看看页面上会不会跟着改变。<br><img src="/pictures/code_title.png" alt="修改后的代码"></p>
+<p>果然修改后，每个页面的title都带了个.bigyue。看来我的想法大概是正确的。那我们在来看看Head.ejs 都写了些什么。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">%</span></span></span><br><span class="line"><span class="tag">  <span class="attr">var</span> <span class="attr">title</span> = <span class="string">page.title;</span></span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">  <span class="attr">if</span> (<span class="attr">is_archive</span>())&#123;</span></span><br><span class="line"><span class="tag">    <span class="attr">title</span> = <span class="string">__(</span>'<span class="attr">archive_a</span>');</span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">    <span class="attr">if</span> (<span class="attr">is_month</span>())&#123;</span></span><br><span class="line"><span class="tag">      <span class="attr">title</span> += <span class="string">': '</span> + <span class="attr">page.year</span> + '/' + <span class="attr">page.month</span>;</span></span><br><span class="line"><span class="tag">    &#125; <span class="attr">else</span> <span class="attr">if</span> (<span class="attr">is_year</span>())&#123;</span></span><br><span class="line"><span class="tag">      <span class="attr">title</span> += <span class="string">': '</span> + <span class="attr">page.year</span>;</span></span><br><span class="line"><span class="tag">    &#125;</span></span><br><span class="line"><span class="tag">  &#125; <span class="attr">else</span> <span class="attr">if</span> (<span class="attr">is_category</span>())&#123;</span></span><br><span class="line"><span class="tag">    <span class="attr">title</span> = <span class="string">__(</span>'<span class="attr">category</span>') + '<span class="attr">:</span> ' + <span class="attr">page.category</span>;</span></span><br><span class="line"><span class="tag">  &#125; <span class="attr">else</span> <span class="attr">if</span> (<span class="attr">is_tag</span>())&#123;</span></span><br><span class="line"><span class="tag">    <span class="attr">title</span> = <span class="string">__(</span>'<span class="attr">tag</span>') + '<span class="attr">:</span> ' + <span class="attr">page.tag</span>;</span></span><br><span class="line"><span class="tag">  &#125;</span></span><br><span class="line"><span class="tag">  %&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">title</span>)&#123; %&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">title</span>  %&gt;</span> | <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">config.title</span> %&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1, maximum-scale=1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">theme.keywords</span>)&#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&lt;%- theme.keywords %&gt;"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">%-</span> <span class="attr">open_graph</span>(&#123;<span class="attr">twitter_id:</span> <span class="attr">theme.twitter</span>, <span class="attr">google_plus:</span> <span class="attr">theme.google_plus</span>, <span class="attr">fb_admins:</span> <span class="attr">theme.fb_admins</span>, <span class="attr">fb_app_id:</span> <span class="attr">theme.fb_app_id</span>&#125;) %&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">theme.rss</span>)&#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"alternate"</span> <span class="attr">href</span>=<span class="string">"&lt;%- theme.rss %&gt;"</span> <span class="attr">title</span>=<span class="string">"&lt;%= config.title %&gt;"</span> <span class="attr">type</span>=<span class="string">"application/atom+xml"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">theme.favicon</span>)&#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"icon"</span> <span class="attr">href</span>=<span class="string">"&lt;%- theme.favicon %&gt;"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">%-</span> <span class="attr">css</span>('<span class="attr">css</span>/<span class="attr">style</span>') %&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">%-</span> <span class="attr">js</span>('<span class="attr">js</span>/<span class="attr">pace.min</span>') %&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">plugins</span>/<span class="attr">analytics</span>/<span class="attr">google-analytics</span>') %&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">plugins</span>/<span class="attr">analytics</span>/<span class="attr">baidu-analytics</span>') %&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">plugins</span>/<span class="attr">analytics</span>/<span class="attr">cnzz-analytics</span>') %&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看出这是个写了HTML head的文件。它在head里加了<code>title</code>标签，<code>meta name=&quot;viewport&quot;</code>，和<code>meta name=&quot;keyword&quot;</code>如果<code>theme.keywords</code>有配置的话，还有几个和theme配置相关的<code>link</code>标签，如<code>theme.rss</code>、<code>theme.favicon</code>。再者就是添加css，js文件，使用partial添加几个网站统计工具的模板ejs，</p>
+<p>这里暂时不再深入，回过头继续看layout.ejs的body部分怎么写的。<br><img src="/pictures/code_body.png" alt="layout.ejs的body部分"></p>
+<p>我这里先学习它的写法，创建好ejs文件，并引用，没学习到的ejs文件暂时先写上<code>this is xxx</code>。然后试着执行这样的主题看看。<br><img src="/pictures/theme_first.png" alt="第一次开主题"></p>
+<p>可以看到局部模板都成功加载了。Head.ejs暂时没有加上中间那句<code>open_graph()</code>看不懂的函数。Head.ejs，也暂时没有加上css和js文件。要用到再看吧。</p>
+<p>接下来，再接着看看它写的Header.ejs。今天姑且就这样吧。</p>
+
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年09月28日 23:10</p>
+        <p>最后更新： 2019年09月29日 19:53</p>
         <p>原始链接： <a class="post-url" href="/2019/09/something-about-hexo-theme-02/" title="something_about_hexo_theme_02">http://yoursite.com/2019/09/something-about-hexo-theme-02/</a></p>
         <footer>
             <a href="http://yoursite.com">
@@ -221,6 +260,12 @@
 </article>
 
 
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#hexo-partial-head"><span class="post-toc-text">hexo partial head</span></a></li></ol>
+        </nav>
+    </aside>
+    
 
 <nav id="article-nav">
   
