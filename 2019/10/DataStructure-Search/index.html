@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>DataStructure_Search | BigYue的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="BigYue | BigYue's Blog">
+  
+  <meta name="description" content="计算机软件基础考纲要求考试内容查找的定义；查找的如下算法：顺序查找法、折半查找法、散列（Hash）技术。 考试要求理解查找的定义；掌握对查找算法进行衡量的一些指标：平均查找长度、成功查找的查找长度、不成功查找的查找长度；掌握顺序查找法和折半查找法，并理解二者之间的异同点；掌握散列技术，包括散列函数、散列表、散列冲突的发生及其解决和负载因子；理解不同查找技术的优缺点。 查找的基本概念在数据集合中查找">
+<meta name="keywords" content="DataStructure,Search">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DataStructure_Search">
+<meta property="og:url" content="http://yoursite.com/2019/10/DataStructure-Search/index.html">
+<meta property="og:site_name" content="BigYue的博客">
+<meta property="og:description" content="计算机软件基础考纲要求考试内容查找的定义；查找的如下算法：顺序查找法、折半查找法、散列（Hash）技术。 考试要求理解查找的定义；掌握对查找算法进行衡量的一些指标：平均查找长度、成功查找的查找长度、不成功查找的查找长度；掌握顺序查找法和折半查找法，并理解二者之间的异同点；掌握散列技术，包括散列函数、散列表、散列冲突的发生及其解决和负载因子；理解不同查找技术的优缺点。 查找的基本概念在数据集合中查找">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-10-06T11:16:17.696Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DataStructure_Search">
+<meta name="twitter:description" content="计算机软件基础考纲要求考试内容查找的定义；查找的如下算法：顺序查找法、折半查找法、散列（Hash）技术。 考试要求理解查找的定义；掌握对查找算法进行衡量的一些指标：平均查找长度、成功查找的查找长度、不成功查找的查找长度；掌握顺序查找法和折半查找法，并理解二者之间的异同点；掌握散列技术，包括散列函数、散列表、散列冲突的发生及其解决和负载因子；理解不同查找技术的优缺点。 查找的基本概念在数据集合中查找">
+  
+  
+    <link rel="icon" href="/myFavicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">BigYue&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/myLogo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        BigYue&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        b...big , bigYue?BigYue!
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="BigYue" target="_blank" href="//bigyue.cn">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/Yue12356">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-DataStructure-Search" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      DataStructure_Search
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-10-06
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="计算机软件基础考纲要求"><a href="#计算机软件基础考纲要求" class="headerlink" title="计算机软件基础考纲要求"></a>计算机软件基础考纲要求</h3><h4 id="考试内容"><a href="#考试内容" class="headerlink" title="考试内容"></a>考试内容</h4><p>查找的定义；<br>查找的如下算法：顺序查找法、折半查找法、散列（Hash）技术。</p>
+<h4 id="考试要求"><a href="#考试要求" class="headerlink" title="考试要求"></a>考试要求</h4><p>理解查找的定义；<br>掌握对查找算法进行衡量的一些指标：平均查找长度、成功查找的查找长度、不成功查找的查找长度；<br>掌握顺序查找法和折半查找法，并理解二者之间的异同点；<br>掌握散列技术，包括散列函数、散列表、散列冲突的发生及其解决和负载因子；<br>理解不同查找技术的优缺点。</p>
+<h3 id="查找的基本概念"><a href="#查找的基本概念" class="headerlink" title="查找的基本概念"></a>查找的基本概念</h3><p>在数据集合中查找符合某种条件的数据元素的过程。其结果分查找成功，或查找失败</p>
+<p><strong>查找表</strong> 是指用于查找的数据集合。对查找表进行的操作可以分为四类</p>
+<ol>
+<li>查询某个特定元素是否存在于查找表中</li>
+<li>检索满足条件的某个特定的数据元素的各种属性</li>
+<li>查找表中插入数据</li>
+<li>查找表中删除数据</li>
+</ol>
+<p>满足前两个条件的查找表是静态的，满足后两个条件的查找表是动态的。一般来讲，顺序查找，折半查找，散列查找适用于静态；二叉排序树，散列查找适用于动态</p>
+<p><strong>关键字</strong> 指唯一表示数据元素的某个数据项的值，基于关键字的查找，其结果是唯一的</p>
+<p><strong>平均查找长度</strong> ASL AverageSearchLength 一次查找的长度表示一次查找需要比较的关键字次数，平均查找长度则是所有查找过程中进行关键字比较次数的平均值。</p>
+<blockquote>
+<p>ASL=∑<sub>i=1</sub><sup>n</sup>P<sub>i</sub>C<sub>i</sub> P<sub>i</sub>为查找第i个数据的概率，C<sub>i</sub>是查找第i个数据所需要的查找长度</p>
+</blockquote>
+<h3 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h3><h4 id="一般线性表的顺序查找"><a href="#一般线性表的顺序查找" class="headerlink" title="一般线性表的顺序查找"></a>一般线性表的顺序查找</h4><p>从线性表的一端开始，逐个检查数据元素的关键字是否满足条件，查找成功则返回位置，失败则返回失败信息</p>
+<p>对于有n个元素的线性表，查找成功的平均查找长度为 ASL<sub>成功</sub>= ∑<sub>i=1</sub><sup>n</sup>P<sub>i</sub>(i) 成功查找到第i个元素需要比较i次 如果P的概率相同 那么原式等于(n+1)/2</p>
+<p>查找不成功显然需要n+1次比较</p>
+<h4 id="有序表的顺序查找"><a href="#有序表的顺序查找" class="headerlink" title="有序表的顺序查找"></a>有序表的顺序查找</h4><p>对于有序表来说，当查找失败，不总是要继续判断到表的另一端，而是直接返回失败信息，因为有序表的有序特性提供了这一方式，因此查找失败的平均查找长度少一些</p>
+<p><strong>折半查找</strong> 仅适用于有序的顺序表，每次查找比较中间元素，根据结果查找前半部分或后半部分</p>
+<p>折半查找的过程可以用 <strong>判定树</strong> 来描述，利用判定树可以很快计算出ASL</p>
+<p>因为折半查找每次都能去掉一半的范围，时间复杂度为O(log<sub>2</sub>n)</p>
+<h3 id="分块查找"><a href="#分块查找" class="headerlink" title="分块查找"></a>分块查找</h3><p>分块查找结合了顺序查找与折半查找，它将查找表分成若干子块，要求块内的元素是无序的，块间是有序的</p>
+<p>其查找过程，首先利用折半查找找索引块，第二步在块内顺序查找</p>
+<h3 id="B树"><a href="#B树" class="headerlink" title="B树"></a>B树</h3><p>B树又叫多路平衡查找树，其孩子结点数的最大值称为树的阶，m阶B树具有以下性质:</p>
+<ol>
+<li>每个结点至多有m棵子树</li>
+<li>若根节点不是终端结点，则至少有两颗子树</li>
+<li>除根节点外的所有非叶结点至少有[m/2](向上取整)棵子树</li>
+<li>所有的叶子结点都出现在同一层上</li>
+</ol>
+<p>未完待续</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年10月06日 19:16</p>
+        <p>原始链接： <a class="post-url" href="/2019/10/DataStructure-Search/" title="DataStructure_Search">http://yoursite.com/2019/10/DataStructure-Search/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/myLogo.png" alt="BigYue">
+                BigYue
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/10/DataStructure-Search/&title=《DataStructure_Search》 — BigYue的博客&pic=http://yoursite.comimages/myLogo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/10/DataStructure-Search/&title=《DataStructure_Search》 — BigYue的博客&source=不作死就不会死" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/DataStructure-Search/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《DataStructure_Search》 — BigYue的博客&url=http://yoursite.com/2019/10/DataStructure-Search/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/10/DataStructure-Search/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/10/DataStructure-Search/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/DataStructure/" class="color4">DataStructure</a>
+      
+    <a href="/tags/Search/" class="color2">Search</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#计算机软件基础考纲要求"><span class="post-toc-text">计算机软件基础考纲要求</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#考试内容"><span class="post-toc-text">考试内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#考试要求"><span class="post-toc-text">考试要求</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查找的基本概念"><span class="post-toc-text">查找的基本概念</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#顺序查找"><span class="post-toc-text">顺序查找</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一般线性表的顺序查找"><span class="post-toc-text">一般线性表的顺序查找</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#有序表的顺序查找"><span class="post-toc-text">有序表的顺序查找</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分块查找"><span class="post-toc-text">分块查找</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#B树"><span class="post-toc-text">B树</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2019/10/vocabulary-everyday-06/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          vocabulary_everyday_06
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/10/vocabulary-everyday-05/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">vocabulary_everyday_05</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 BigYue<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/英语学习/">英语学习</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/DataStructure/" style="font-size: 13.33px;">DataStructure</a> <a href="/tags/Queue/" style="font-size: 10px;">Queue</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/hexo-theme/" style="font-size: 16.67px;">hexo_theme</a> <a href="/tags/vocabulary/" style="font-size: 20px;">vocabulary</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/DataStructure/" style="font-size: 13.33px;">DataStructure</a> <a href="/tags/Queue/" style="font-size: 10px;">Queue</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/hexo-theme/" style="font-size: 16.67px;">hexo_theme</a> <a href="/tags/vocabulary/" style="font-size: 20px;">vocabulary</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
