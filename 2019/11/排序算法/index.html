@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>排序算法 | BigYue的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="BigYue | BigYue's Blog">
+  
+  <meta name="description" content="排序算法（考研版本）排序的稳定性排序的稳定性指，对于key相同的两个元素，排序后不改变在原序列中的先后关系 稳定性不衡量排序算法的优劣，只能说明排序算法的性质 内部排序与外部排序根据排序过程中，数据元素是否完全在内存中，将排序算法分为内部排序和外部排序 插入排序简单插入排序12345678910//从前往后发现无序的点，将其插入在前面有序的数组内for(int i=2;i&amp;lt;=n;++i)&amp;#">
+<meta name="keywords" content="-SortAlgorithm -DataStructure">
+<meta property="og:type" content="article">
+<meta property="og:title" content="排序算法">
+<meta property="og:url" content="http://yoursite.com/2019/11/排序算法/index.html">
+<meta property="og:site_name" content="BigYue的博客">
+<meta property="og:description" content="排序算法（考研版本）排序的稳定性排序的稳定性指，对于key相同的两个元素，排序后不改变在原序列中的先后关系 稳定性不衡量排序算法的优劣，只能说明排序算法的性质 内部排序与外部排序根据排序过程中，数据元素是否完全在内存中，将排序算法分为内部排序和外部排序 插入排序简单插入排序12345678910//从前往后发现无序的点，将其插入在前面有序的数组内for(int i=2;i&amp;lt;=n;++i)&amp;#">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-11-03T15:23:03.053Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="排序算法">
+<meta name="twitter:description" content="排序算法（考研版本）排序的稳定性排序的稳定性指，对于key相同的两个元素，排序后不改变在原序列中的先后关系 稳定性不衡量排序算法的优劣，只能说明排序算法的性质 内部排序与外部排序根据排序过程中，数据元素是否完全在内存中，将排序算法分为内部排序和外部排序 插入排序简单插入排序12345678910//从前往后发现无序的点，将其插入在前面有序的数组内for(int i=2;i&amp;lt;=n;++i)&amp;#">
+  
+  
+    <link rel="icon" href="/myFavicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">BigYue&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/myLogo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        BigYue&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        b...big , bigYue?BigYue!
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="BigYue" target="_blank" href="//bigyue.cn">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/Yue12356">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-排序算法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      排序算法
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-11-03
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="排序算法（考研版本）"><a href="#排序算法（考研版本）" class="headerlink" title="排序算法（考研版本）"></a>排序算法（考研版本）</h2><h3 id="排序的稳定性"><a href="#排序的稳定性" class="headerlink" title="排序的稳定性"></a>排序的稳定性</h3><p>排序的稳定性指，对于key相同的两个元素，排序后不改变在原序列中的先后关系</p>
+<p>稳定性不衡量排序算法的优劣，只能说明排序算法的性质</p>
+<h3 id="内部排序与外部排序"><a href="#内部排序与外部排序" class="headerlink" title="内部排序与外部排序"></a>内部排序与外部排序</h3><p>根据排序过程中，数据元素是否完全在内存中，将排序算法分为内部排序和外部排序</p>
+<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><h4 id="简单插入排序"><a href="#简单插入排序" class="headerlink" title="简单插入排序"></a>简单插入排序</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//从前往后发现无序的点，将其插入在前面有序的数组内</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;++i)&#123;</span><br><span class="line">    <span class="keyword">if</span>(L[i]&lt;L[i<span class="number">-1</span>])&#123;    <span class="comment">//无序</span></span><br><span class="line">        L[<span class="number">0</span>]=L[i];      <span class="comment">//L[0]当做哨兵 暂存数据</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i<span class="number">-1</span>;L[<span class="number">0</span>]&lt;L[j];--j)&#123;   <span class="comment">//从后往前找插入位置 (比较)</span></span><br><span class="line">            L[j+<span class="number">1</span>]=L[j];    <span class="comment">//将数据元素后移一位 (移动)</span></span><br><span class="line">        &#125;</span><br><span class="line">        L[j+<span class="number">1</span>]=L[<span class="number">0</span>];    <span class="comment">//插入位置</span></span><br><span class="line">    &#125;   <span class="comment">//i之前的数组又是有序的了。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>空间效率</strong> : 仅适用了i,j和L[0]作为辅助单位，空间复杂度为O(1)<br><strong>时间效率</strong> : 简单插入排序可以视为对有序列表进行n-1次插入操作。<strong>在最好情况下</strong>，数组已经有序，只需要进行n-1次比较操作。<strong>在最坏情况下</strong>，数组逆序，n-1次比较操作之后，都需要进行移动到开头的移动操作，所以是$\sum^{n}<em>{i=2}{i+1}$的比较次数，$\sum^{n}</em>{i=2}{i}$的移动次数</p>
+<h4 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将简单插入中的比较和移动分离，利用二分法找到插入的位置，再进行移动</span></span><br><span class="line"><span class="keyword">int</span> low,high,mid;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;++i)&#123;</span><br><span class="line">    <span class="keyword">if</span>(L[i]&lt;L[i<span class="number">-1</span>])&#123;</span><br><span class="line">        L[<span class="number">0</span>]=L[i];</span><br><span class="line">        low=<span class="number">1</span>;</span><br><span class="line">        high=i<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(low &lt;= high)&#123;     <span class="comment">//二分法查找插入位置</span></span><br><span class="line">            mid = ( low + high ) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(L[mid]&gt;L[<span class="number">0</span>])</span><br><span class="line">                high=mid<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                low = mid+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i<span class="number">-1</span>;j&gt;=high+<span class="number">1</span>;--j)</span><br><span class="line">            L[j+<span class="number">1</span>]=L[j];</span><br><span class="line">        L[high+<span class="number">1</span>] = L[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>不改变空间效率，在时间效率上，<strong>仅减少了比较的次数，比较的时间复杂度变为$O(nlog_2n)$</strong>，移动次数并未改变，<strong>总体上，时间复杂度仍为$O(n^2)$</strong></p>
+<h4 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h4><p>因为简单插入排序适用于基本有序的排序表和数据量不大的排序表，希尔排序的思想是按步长对表分组进行插入排序，使表增加有序性，步长逐渐减小，达到基本有序，最后的步长为1，表有序。</p>
+<p>希尔提出的步长序列方案是$d_1=n/2,d_{i+1} =d_i/2 下取整$</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(dk = n/<span class="number">2</span>;dk&gt;=<span class="number">1</span>;dk/=<span class="number">2</span>)&#123;  <span class="comment">//步长递减</span></span><br><span class="line">    <span class="keyword">for</span>(i=dk+<span class="number">1</span>;i&lt;=n;++i)&#123;   <span class="comment">//按照步长的插入排序</span></span><br><span class="line">        <span class="keyword">if</span>(L[i]&lt;L[i-dk])&#123;</span><br><span class="line">            L[<span class="number">0</span>]=L[i];</span><br><span class="line">            <span class="keyword">for</span>(j=i-dk;L[<span class="number">0</span>]&lt;L[j];j-=dk)&#123;    <span class="comment">//别忘了这里也是按照步长的。</span></span><br><span class="line">                L[j+dk]=L[j];</span><br><span class="line">            &#125;</span><br><span class="line">            L[j+dk]=L[<span class="number">0</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>空间效率上，依旧是$O(1)$</strong>，当n在某个特定范围，希尔排序有很好的效果，<strong>在最坏情况下时间复杂度为$O(n^2)$</strong></p>
+<p>相比于简单插入排序，希尔排序是不稳定的</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年11月03日 23:23</p>
+        <p>原始链接： <a class="post-url" href="/2019/11/排序算法/" title="排序算法">http://yoursite.com/2019/11/排序算法/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/myLogo.png" alt="BigYue">
+                BigYue
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/排序算法/&title=《排序算法》 — BigYue的博客&pic=http://yoursite.comimages/myLogo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/排序算法/&title=《排序算法》 — BigYue的博客&source=不作死就不会死" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/排序算法/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《排序算法》 — BigYue的博客&url=http://yoursite.com/2019/11/排序算法/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/排序算法/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/11/排序算法/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/-SortAlgorithm-DataStructure/" class="color5">-SortAlgorithm -DataStructure</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#排序算法（考研版本）"><span class="post-toc-text">排序算法（考研版本）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#排序的稳定性"><span class="post-toc-text">排序的稳定性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内部排序与外部排序"><span class="post-toc-text">内部排序与外部排序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#插入排序"><span class="post-toc-text">插入排序</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#简单插入排序"><span class="post-toc-text">简单插入排序</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#折半插入排序"><span class="post-toc-text">折半插入排序</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#希尔排序"><span class="post-toc-text">希尔排序</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/Something-about-WebMining/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Something_about_WebMining</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 BigYue<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Web数据挖掘/">Web数据挖掘</a><a class="category-link" href="/categories/英语学习/">英语学习</a><a class="category-link" href="/categories/英语长句/">英语长句</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/SortAlgorithm-DataStructure/" style="font-size: 10px;">-SortAlgorithm -DataStructure</a> <a href="/tags/DataStructure/" style="font-size: 13.33px;">DataStructure</a> <a href="/tags/Queue/" style="font-size: 10px;">Queue</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/WebMining/" style="font-size: 10px;">WebMining</a> <a href="/tags/hexo-theme/" style="font-size: 16.67px;">hexo_theme</a> <a href="/tags/sentence/" style="font-size: 10px;">sentence</a> <a href="/tags/vocabulary/" style="font-size: 20px;">vocabulary</a> <a href="/tags/可能用的到的东西/" style="font-size: 10px;">可能用的到的东西</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/SortAlgorithm-DataStructure/" style="font-size: 10px;">-SortAlgorithm -DataStructure</a> <a href="/tags/DataStructure/" style="font-size: 13.33px;">DataStructure</a> <a href="/tags/Queue/" style="font-size: 10px;">Queue</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/WebMining/" style="font-size: 10px;">WebMining</a> <a href="/tags/hexo-theme/" style="font-size: 16.67px;">hexo_theme</a> <a href="/tags/sentence/" style="font-size: 10px;">sentence</a> <a href="/tags/vocabulary/" style="font-size: 20px;">vocabulary</a> <a href="/tags/可能用的到的东西/" style="font-size: 10px;">可能用的到的东西</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
